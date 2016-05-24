@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Email</title>
+</head>
+<body>
+  <!-- create a place for an invalid email flash to show -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+          {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <!-- with all the data we can then construct a more structured output -->
+  <h2>Add your email!</h2>
+  <form action='/success' method='POST'>
+    Email Address: <input type = "text" name="address" id="address">
+    <input type="submit" value="Add">
+  </form>
+</body>
+</html>
